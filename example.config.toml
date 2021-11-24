@@ -1,0 +1,7 @@
+[bot]
+description = "Moderation bot for The Balance"
+token = "a discord token"
+guild = "a server ID"
+
+[channels]
+warning = "a warning channel ID"
