@@ -1,6 +1,6 @@
 # Libra
 
-A moderation bot for The balance discord.
+A moderation bot for The Balance discord.
 
 ## Running locally
 
