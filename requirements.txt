@@ -1,3 +1,0 @@
-discord.py==1.7.3
-discord-ui==5.0.2
-toml==0.10.2

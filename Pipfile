@@ -6,7 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-nextcord = "==2.0.0a3"
+toml = "*"
+py-cord = {git = "https://github.com/Pycord-Development/pycord.git", ref = "3ce83f3089dd2d88856858272344f12453613183"}
 
 [requires]
 python_version = "3.8"
