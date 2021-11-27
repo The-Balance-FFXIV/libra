@@ -7,7 +7,7 @@ class ModerationCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @slash_command(name="ban")
+    @slash_command(name="ban", description="Ban a user.")
     @commands.guild_only()
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx: commands.Context, user: discord.Member, reason: str):
@@ -35,6 +35,7 @@ class ModerationCog(commands.Cog):
         await user.kick()
         await self.bot.log_message(embed=embed)
         await ctx.respond(embed=embed, ephemeral=True)
-    
+
+
 def setup(bot):
     bot.add_cog(ModerationCog(bot))
