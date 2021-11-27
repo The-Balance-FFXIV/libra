@@ -1,10 +1,12 @@
 import asyncio
+import discord
 from discord.ext import commands
-from discord_ui import UI
 import toml
 
 # Cogs that should run on startup
-default_cogs = ['cogs.moderation']
+default_cogs = [
+    'cogs.moderation',
+]
 
 class Libra(commands.Bot):
     def __init__(self, config):
@@ -14,11 +16,15 @@ class Libra(commands.Bot):
     async def on_ready(self):
         print(f"Logged in as: {self.user.name}")
 
+    async def log_message(self, embed: discord.Embed):
+        channel_id = self.config['channels']['log']
+        channel = self.get_channel(channel_id)
+        await channel.send(embed=embed)
+
 
 async def run():
     config = toml.load("config.toml")
     bot = Libra(config)
-    ui = UI(bot)
 
     if __name__ == '__main__':
         for cog in default_cogs:
