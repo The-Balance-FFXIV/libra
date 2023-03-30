@@ -6,6 +6,7 @@ import toml
 # Cogs that should run on startup
 default_cogs = [
     'cogs.moderation',
+    'cogs.roles',
 ]
 
 class Libra(commands.Bot):
